@@ -15,7 +15,7 @@
 //    스마트 포인터등을 사용할수 없습니다.
 
 template<typename T1, typename T2>
-? find(T1 first, T1 last, T2 value)
+T1 find(T1 first, T1 last, T2 value)
 {
 	while (first != last && *first != value)
 		++first;
