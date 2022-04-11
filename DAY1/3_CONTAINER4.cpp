@@ -32,17 +32,21 @@ template<typename T> class slist
 {
 	Node<T>* head = nullptr;
 public:
+	using iterator = slist_iterator<T>;
+	using value_type = T;
+
+
 	void push_front(const T& a)
 	{
 		head = new Node<T>(a, head);
 	}
-
-	using iterator = slist_iterator<T>;
-
 	
 	iterator begin() { return iterator(head); }
 	iterator end() { return iterator(nullptr); }
 };
+
+
+
 
 template<typename T1, typename T2>
 T1 find(T1 first, T1 last, T2 value)
@@ -81,3 +85,7 @@ int main()
 
 // 자료구조와 알고리즘이 분리된 형태의 라이브러리
 // 알고리즘(find) 제작자는 자신이 어떤 자료구조에서 선형검색하는지 알필요 없이 제작
+
+// 1일차 : Iterator(5시간이상
+// 2일차 : 알고리즘(4~5), Container(8시간)
+// 3일차 : Container
