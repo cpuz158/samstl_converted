@@ -65,11 +65,14 @@ int main()
 	s.push_front(40);
 	s.push_front(50);
 
+	// s의 1번째 요소를 가리키는 반복자(포인터와 유사하게 동작하는 객체) 꺼내기. 
 	slist_iterator<int> p = s.begin();
 
 	// 이제 p는 포인터와 유사하게 동작합니다.
 	// 포인터 처럼 생각하고 사용하세요.
-	std::cout << *p << std::endl;
-	++p;
-	std::cout << *p << std::endl;
+	std::cout << *p << std::endl; // 50
+	
+	++p; // 핵심. slist 는 요소가 떨어진 메모리 이지만, ++ 연산으로 다음으로 이동가능합니다
+
+	std::cout << *p << std::endl; // 40
 }
