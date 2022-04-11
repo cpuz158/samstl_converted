@@ -42,7 +42,7 @@ public:
 
 template<typename T> class slist
 {
-	Node<T>* head = 0;
+	Node<T>* head = nullptr;
 public:
 	void push_front(const T& a)
 	{
@@ -52,7 +52,7 @@ public:
 	// find 로 보내려면 처음을 가리키는 반복자와 마지막 다음을 가리키는 반복자가 필요합니다.
 	// 모든 컨테이너(list같은 클래스)에 아래 2개의 함수를 만들기로 약속합니다.
 	slist_iterator<T> begin() { return slist_iterator<T>(head); }
-	slist_iterator<T> end()   { return slist_iterator<T>(0); }
+	slist_iterator<T> end()   { return slist_iterator<T>(nullptr); }
 };
 
 int main()
