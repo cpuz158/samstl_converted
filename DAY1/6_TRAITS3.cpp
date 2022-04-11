@@ -23,12 +23,12 @@ template<typename T> struct iterator_traits<T*>
 };
 
 template<typename T>
-typename iterator_traits<T>::value_type sum(T first, T last)
+typename std::iterator_traits<T>::value_type sum(T first, T last)
 {
 //	typename T::value_type s = 0;
 
-
-	typename iterator_traits<T>::value_type s = 0;
+//	typename iterator_traits<T>::value_type s = 0;
+	typename std::iterator_traits<T>::value_type s = 0;
 
 
 
