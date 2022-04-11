@@ -49,7 +49,7 @@ public:
 
 
 template<typename InputIter, typename T>
-InputIter find(InputIter first, InputIter last, const T& value)
+InputIter find(InputIter first, InputIter last, T value)
 {
 	while (first != last && *first != value)
 		++first;
