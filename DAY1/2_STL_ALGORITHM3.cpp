@@ -2,6 +2,9 @@
 
 // Step 3. 검색 대상 타입의 일반화 - "템플릿 사용"
 
+// Step 2보다 좋아진점
+// 문자열뿐 아니라 "모든 타입의 배열에서, [first, last) 구간의 선형검색" 수행
+
 template<typename T>
 T* find(T* first, T* last, T c)
 {
