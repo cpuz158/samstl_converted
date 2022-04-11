@@ -63,7 +63,6 @@ int main()
 	s.push_front(40);
 	s.push_front(50);
 
-
 	slist<int>::iterator p = find(s.begin(), s.end(), 30);
 
 	if (p == s.end())
@@ -76,3 +75,9 @@ int main()
 	}
 
 }
+// 40 page 내용 설명
+// STL : Standard Template Library
+// STL 의 3대 요소 : Container, Iterator, Algorithm(find 같은 일반함수템플릿)
+
+// 자료구조와 알고리즘이 분리된 형태의 라이브러리
+// 알고리즘(find) 제작자는 자신이 어떤 자료구조에서 선형검색하는지 알필요 없이 제작
