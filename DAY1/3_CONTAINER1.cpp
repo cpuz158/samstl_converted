@@ -19,6 +19,8 @@ public:
 	{
 		head = new Node<T>(a, head);
 	}
+	// 나중에 pop_front(), 소멸자 같은 코드 만드세요
+	// delete 할수 있게 해보세요..
 };
 
 int main()
