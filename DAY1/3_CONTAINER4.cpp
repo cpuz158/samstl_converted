@@ -48,8 +48,8 @@ public:
 
 
 
-template<typename T1, typename T2>
-T1 find(T1 first, T1 last, T2 value)
+template<typename InputIter, typename T>
+InputIter find(InputIter first, InputIter last, const T& value)
 {
 	while (first != last && *first != value)
 		++first;
