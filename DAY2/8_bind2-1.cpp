@@ -41,8 +41,12 @@ int main()
     f = std::bind(&Machine::mf1, &m, _1 ); // bind(멤버함수, &객체, 인자들)
     f(10); // m.mf1(10);
 
-    f = std::bind(&Machine::mf2, &m, _1 , 9 );
+    // 객체 고정시, 주소로 보내도 되고, 값으로 보내도 됩니다.
+    // 값으로 보내면 "참조"로 보관하고 있게 됩니다.
+    f = std::bind(&Machine::mf2, m, _1 , 9 ); 
     f(3); // m.mf2(3, 9);
+
+    f = std::bind(&Machine::mf2, Machine(), _1, 9);
 }
 
 
