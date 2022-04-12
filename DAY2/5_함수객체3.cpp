@@ -15,19 +15,28 @@ public:
 		bs.set();  // 모든 비트를 1로
 	}
 
+
 	int operator()()
 	{
-		return rand() % 10;
+		if (bs.none()) // 모두 0이면 더이상 난수를 구할수 없다
+		{
+			if (recycle == true) // 재사용한다면
+				bs.set();  // 다시 모두 1
+			else
+				return -1;
+		}
+		int v = -1;
+		while ( ! bs.test(v = rand() % 10) );
+		bs.reset(v); 
+		return v;
 	}
 };
-
-
-URandom urand; // 이제, urand 는 함수가 아닌 객체입니다.
+//URandom urand; // 이제, urand 는 함수가 아닌 객체입니다.
 			   // 하지만, 함수처럼 사용가능합니다.
-
+URandom urand(true);
 int main()
 {
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 15; i++)
 		std::cout << urand() << std::endl;
 }
 
