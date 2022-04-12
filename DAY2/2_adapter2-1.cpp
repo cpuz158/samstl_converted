@@ -15,6 +15,10 @@ int main()
 	std::list<int> s2;
 
 	// s의 모든 내용을 s2로 복사하는데, 거꾸로 하고 싶다.??
+	// 1. 거꾸로해야 하므로 - 역반복자
+	// 2. s2가 비어 있으므로 - 삽입반복자 
+	// 3. 복사는 copy
+	std::copy(s.rbegin(), s.rend(), std::back_inserter(s2) );
 
 	show(s2); // 10,9, 3,7, 6,5,4,3,2,1
 }
