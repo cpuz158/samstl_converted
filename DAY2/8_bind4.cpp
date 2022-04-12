@@ -14,7 +14,6 @@ void call_ntimes(int n, void(*f)())
 		f();
 }
 
-
 int main()
 {
 	FOO f2;
