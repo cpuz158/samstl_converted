@@ -47,7 +47,13 @@ int main()
     f(3); // m.mf2(3, 9);
 
     f = std::bind(&Machine::mf2, Machine(), _1, 9);
+
+    // 장점 3. 람다 표현식도 됩니다.
+    f = [](int a) { std::cout << "lambda " << a << std::endl; };
+    f(3); // lambda : 3
 }
 
-
+// 결론 : function 에는 std::bind 이 도움을 받으면
+//      일반함수, 멤버 함수, 함수객체, 람다 표현식 등 거의 모든 호출가능한 것을
+//      담을수 있습니다.
 
