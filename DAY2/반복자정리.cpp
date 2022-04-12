@@ -27,3 +27,7 @@
 //    c.rbegin();
 //    c.cbegin();
 //    c.crbegin();
+
+std::list<int> s1 = { 1,2,3,4,5 };
+std::list<int> s2 = { 1,2 };
+std::copy(s1.begin(), s1.end(), s2.begin()); // runtime error
