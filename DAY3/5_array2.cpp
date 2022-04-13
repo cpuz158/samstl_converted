@@ -24,6 +24,15 @@ int main()
 	// 1. 모든 요소가 스택에 있습니다.(배열과 동일)
 	array<int, 10> arr = { 1,2,3,4,5,6,7,8,9,10 };
 
-	// raw array 는 멤버함수가 없지만 array 는 멤버함수가 있습니다.
+	// 2. raw array 는 멤버함수가 없지만 array 는 멤버함수가 있습니다.
 	std::cout << arr.size() << std::endl; 
+
+	// 3. 다른 컨테이너 처럼 반복자 사용가능
+	auto p = arr.begin();
+
+	// 4. begin(), end()가 있는 모든 타입은 range_for 도 됩니다.
+	for (auto e : arr)
+	{
+		std::cout << e << std::endl;
+	}
 }
