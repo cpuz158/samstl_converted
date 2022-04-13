@@ -13,4 +13,17 @@ int main()
 	std::cout << p2.first << std::endl; // 3
 	std::cout << p2.second.first << std::endl; // 1
 	std::cout << p2.second.second << std::endl; // 3.4
+
+	// 위처럼 하면 pair에 몇개라도 넣을수 있지만, 너무 복잡하고 불편합니다.
+	// 그래서 C++11 부터 tuple 제공
+
+	std::tuple<> t0; // 0개 보관
+	std::tuple<int, double> t2(1, 3.4);
+	std::tuple<int, double, char, short> t4(1, 3.4, 'A', 3);
+
+	// tuple의 요소 접근은 std::get 사용
+
+	std::get<0>(t4) = 30;
+
+	std::cout << std::get<0>(t4) << std::endl;
 }
