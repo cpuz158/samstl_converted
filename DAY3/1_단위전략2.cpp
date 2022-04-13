@@ -21,7 +21,8 @@ public:
 
 int main()
 {
-	std::vector<int> v(5);
+//	std::vector<int> v(5); // C++ 표준 할당기( std::allocator 사용)
+	std::vector<int, MyAlloc<int> > v(5); // 사용자가 만든 할당기 전달
 
 	v.resize(10);
 }
