@@ -6,6 +6,18 @@
 #include <fstream>
 #include "show.h"
 
+class FindChar
+{
+	std::string data;
+public:
+	FindChar(const std::string& s) : data(s) {}
+
+	inline bool operator()(char c)
+	{
+		return std::find(data.begin(), data.end(), c) != data.end();
+	}
+};
+
 
 int main()
 {
@@ -28,8 +40,20 @@ int main()
 	for (auto& e : v)
 	{
 //		std::reverse(e.begin(), e.end());
+//		std::replace(e.begin(), e.end(), 'i', ' ');
 
-		std::replace(e.begin(), e.end(), 'i', ' ');
+		// 모든 모음을 공백 처리해 달라.
+//		std::replace_if(e.begin(), e.end(), 
+//						[](char c) { return c == 'a' || c == 'e'; },
+//						' ');
+
+//		FindChar fc("aeiouAEIOU");
+//		bool b = fc('a'); // true
+		FindChar fc("0123456789");
+
+		std::replace_if(e.begin(), e.end(), fc,	' ');
+
+
 	}
 
 	//-------------------------------------
