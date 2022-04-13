@@ -11,7 +11,7 @@ struct Greater
 	// 함수 객체 만들때 "operator()" 를 꼭 상수 멤버 함수로 하세요.
 	// const Greater g; 로 만들었어도
 	// if ( g(10, 20) ) 할수 있어야 합니다 g.operator()(10,20) 호출가능하게
-	inline bool operator()(T a, T b) const 
+	inline bool operator()( const T& a, const T& b) const 
 	{ 
 		return a > b; 
 	}
@@ -19,6 +19,13 @@ struct Greater
 
 int main()
 {
+	Greater<int> g;
+	const int n1 = 10, n2 = 20;
+	g(n1, n2);
+
+
+
+
 //	std::set<int, Greater<int> > s; 
 	std::set<int, std::greater<int> > s;
 
