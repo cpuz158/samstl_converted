@@ -5,7 +5,13 @@
 class Shape
 {
 public:
+	// "모든 기반 클래스의 소멸자는 반드시 가상함수 이어야 한다." 라는 규칙이 있으므로
+	// 결국, 상속을 사용하는 코드는 대부분 가상함수가 한개 이상은 있습니다.
+	virtual ~Shape() {}
 };
+
+
+
 
 class Point : public Shape
 {
@@ -30,10 +36,12 @@ int main()
 
 	// 고유 멤버 접근이 필요하면 캐스팅해야 합니다
 	// 방법 1. 타입을 명확히 확실할수 있다면 static_cast 하세요
-	Rect* p1 = static_cast<Rect*>(v[2]);
-	p1->draw();
+//	Rect* p1 = static_cast<Rect*>(v[2]);
+//	p1->draw();
 
 	// 방법 2. 확실할수 없다면, dynamic_cast 하세요
-	Rect* p2 = dynamic_cast<Rect*>(v[2]);
+//	Rect* p2 = dynamic_cast<Rect*>(v[2]);
+	Rect* p2 = dynamic_cast<Rect*>(v[0]);
+
 	std::cout << p2 << std::endl;
 }
