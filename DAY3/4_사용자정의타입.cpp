@@ -33,14 +33,24 @@ int main()
 					// 디폴트 생성자가 없으므로 에러 
 
 	v7.resize(15, { 0, 0 }); // ok
-	v7.resize(7); // 줄어든다면 ? 역시 전달해야 합니다.
+//	v7.resize(7); // 줄어든다면 ? 역시 전달해야 합니다.
 
 	//--------------------------------
 	// 아래 3개의 코드를 생각해 보세요
 	std::vector< std::vector<int> > m1(10);
-	std::vector< std::vector<int> > m2(10, 10);
-	std::vector< std::vector<int> > m3(10, { 10 });
+//	std::vector< std::vector<int> > m2(10, 10); // error
+	std::vector< std::vector<int> > m3(10, { 10 }); // 10 * 1 의 matrix
+
+	std::vector< std::vector<int> > m4(10, std::vector<int>(10));
+	std::vector< std::vector<int> > m5(10, std::vector<int>(10, 3));
+
+//	m1[2][2] = 10; // runtime error. m1은 10개지만, m1[2]의 vector는 크기가 0
+
+	std::cout << m3[0][0] << std::endl; // 10
+	std::cout << m5[0][0] << std::endl; // 3
 }
 
-
+// 정리
+// 1. 복사 생성자가 없는 타입은 컨테이너에 넣을수 없습니다.
+// 2. 디폴트 생성자가 없는 타입은 꼭 위처럼 복사할 객체를 전달해야 합니다.
 
