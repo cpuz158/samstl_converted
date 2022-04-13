@@ -12,7 +12,7 @@ class FindChar
 public:
 	FindChar(const std::string& s) : data(s) {}
 
-	inline bool operator()(char c)
+	inline bool operator()(char c) const 
 	{
 		return std::find(data.begin(), data.end(), c) != data.end();
 	}
