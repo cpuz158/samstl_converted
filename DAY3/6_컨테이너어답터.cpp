@@ -9,6 +9,9 @@
 // 1. 새로 만들자.
 // 2. list를 스택처럼 보이게 하자.
 
+// "Adapter Pattern" : 기본 클래스의 인터페이스(함수이름)을
+//					변경해서 새로운 클래스를 만드는 디자인 패턴.
+
 template<typename T> class stack
 {
 	std::list<T> c;
@@ -18,7 +21,6 @@ public:
 	void pop()			  { c.pop_back(); }    // 제거만, 반환 안함
 	T& top()              { return c.back(); } // 반환만, 제거 안함
 };
-
 
 int main()
 {
