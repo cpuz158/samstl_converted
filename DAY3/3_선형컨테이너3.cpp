@@ -27,10 +27,20 @@ int main()
 	std::cout << v.capacity() << std::endl; // 8
 
 	v.push_back(3);  // 끝에 한개(3) 추가
+					// 여유 공간이 없으므로 메모리 재할당 필요
+					// expensive operation
 
 	std::cout << v.size() << std::endl;     // 9
-	std::cout << v.capacity() << std::endl; // ???
+	std::cout << v.capacity() << std::endl; // g++ : 16(즉, 2배씩 확장)
+									// cl(visual studio) : 12(1.5배)
 
+	v.reserve(100); // 메모리(capacity)만 100 으로
+
+	std::cout << v.size() << std::endl;     // 9
+	std::cout << v.capacity() << std::endl; // 100
+
+	// list 에는 capacity 개념이 없습니다.
+	// vector 에만 있습니다.
 }
 
 
