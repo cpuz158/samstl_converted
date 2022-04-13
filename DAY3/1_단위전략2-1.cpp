@@ -1,11 +1,17 @@
 #include <vector>
 #include <iostream>
 
+// C++ 에서 struct 와 class 는 단, 한개의 차이점만 있습니다
+// struct : 접근지정자 생략시 public
+// class  : 접근지정자 생략시 private
+
+
 // STL 컨테이너에 전달할 메모리 할당 정책을 담은 할당기 만들기
 
 // 메모리 할당, 해지 정책을 담은 allocate/deallocate 함수를 제공하면 됩니다.
-template<typename T> struct debug_alloc
+template<typename T> class debug_alloc
 {
+public:
 	T* allocate(std::size_t sz)
 	{
 		T* ptr = static_cast<T*>(malloc(sizeof(T) * sz));
