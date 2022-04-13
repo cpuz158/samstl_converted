@@ -5,6 +5,15 @@
 // struct : 접근지정자 생략시 public
 // class  : 접근지정자 생략시 private
 
+// POD 라는 용어는 => "trivial" , "standard layout" 이라는 용어로 변경됩니다
+// std::is_pod<> 도 사라졌습니다.
+/*
+class Point
+{
+public:
+	int x, y;
+};
+*/
 
 // STL 컨테이너에 전달할 메모리 할당 정책을 담은 할당기 만들기
 
