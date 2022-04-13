@@ -26,7 +26,7 @@ int main()
 //	v.push_back(new int); // error
 
 	// 그런데, v는 Shape* 로 보관하므로 Rect의 소유 멤버 접근은 안됩니다.
-	v[2]->draw(); // error.
+//	v[2]->draw(); // error.
 
 	// 고유 멤버 접근이 필요하면 캐스팅해야 합니다
 	// 방법 1. 타입을 명확히 확실할수 있다면 static_cast 하세요
@@ -34,6 +34,6 @@ int main()
 	p1->draw();
 
 	// 방법 2. 확실할수 없다면, dynamic_cast 하세요
-	Rect* p2 = static_cast<Rect*>(v[2]);
+	Rect* p2 = dynamic_cast<Rect*>(v[2]);
 	std::cout << p2 << std::endl;
 }
