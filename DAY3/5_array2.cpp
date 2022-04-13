@@ -4,11 +4,18 @@
 
 // 아래 코드를 잘 생각해 보세요
 template<typename T, std::size_t N>
-class array
+struct array
 {
 	T buff[N];
+	inline int size() const { return N; }
+	inline bool empty() const { return N != 0; }
 
-	int size() const { return N; }
+	using value_type = T;
+	using iterator = T* ;
+	using reference = T& ;
+
+	iterator begin() { return buff ; }
+	iterator end()   { return buff + N ; }
 };
 
 int main()
