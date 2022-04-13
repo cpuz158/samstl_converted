@@ -13,9 +13,9 @@ public:
 
 	void dump() const 	{	std::cout << x << ", " << y << std::endl;	}
 
-	inline bool operator<(const Point& p1, const Point& p2) const
+	inline bool operator<(const Point& p) const
 	{
-		return p1.x < p2.x;
+		return x < p.x;
 	}
 };
 
