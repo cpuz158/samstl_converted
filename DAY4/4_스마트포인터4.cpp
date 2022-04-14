@@ -25,6 +25,7 @@ int main()
 
 
 
+	
 	// 핵심 3. -> 와 . 연산자
 	std::shared_ptr<Car> sp1(new Car);
 	std::shared_ptr<Car> sp2 = sp1;
@@ -33,12 +34,16 @@ int main()
 	// -> : 대상체(Car) 의 멤버에 접근
 	sp1->Go(); // Car 의 멤버 함수
 
-
 	// . : shared_ptr 자체의 멤버 함수
 	int n = sp1.use_count();
 
 	std::cout << n << std::endl; // 참조계수 2
 
+	Car* p = sp1.get();
+	
+	sp1.reset(); // 
+	sp1 = 0;
+	sp1 = nullptr;
 }
 
 
