@@ -32,6 +32,21 @@ int main()
 	else
 	{
 		std::cout << "객체가 파괴 되지 않음" << std::endl;
+		
+		// 파괴 되지 않은 경우.. 객체에 접근하려면
+		// 1. weak 로는 접근할수 없습니다.
+		//	=> weak 는 객체 수명에 관여하지 않으므로(참조계수 증가 안함)
+		//  => 객체의 멤버 함수 호출중에 객체가 파괴 될수도 있습니다.
+		//     그래서 weak 로 객체 접근 안됩니다.
+		//auto ret = sp1->bf->name; // error. weak 는 -> 연산자 제공안함
+
+		// weak 를 가지고 shared 를 만들어서 접근해야 합니다.
+		std::shared_ptr<People> sp = sp1->bf.lock();
+
+		if (sp) // 다시 유효성 확인후 사용
+		{
+			std::cout << sp->name << std::endl;
+		}
 	}
 }
 
