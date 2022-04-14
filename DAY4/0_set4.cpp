@@ -46,6 +46,13 @@ int main()
 		std::cout << "검색실패" << std::endl;
 	else 
 		std::cout << "검색성공 : " << ret->x << ", " << ret->y << std::endl;
+
+	// 알고리즘 find 는 "==" 연산으로 검색합니다. - equality 
+	auto ret2 = std::find(s.begin(), s.end(), pt); // error
+											// Point 는 "==" 연산이 안됩니다
+
+	// s.find    : 크지도 않고 작지도 않으면 "같다" - equivalency
+	// std::find : == 로 검색 - equality
 }
 
 
