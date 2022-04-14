@@ -5,12 +5,13 @@
 #include <list>
 #include <map>
 #include <algorithm>
+#include "show.h"
 
 int main()
 {
 	std::map< std::string, std::list<int> > indexMap;
 
-	std::ifstream f("readme.txt");
+	std::ifstream f("1_map2.cpp");
 
 	int no = 0; // line number 관리
 
@@ -27,6 +28,12 @@ int main()
 			//			   없으면 "키" 생성
 			indexMap[word].push_back(no);
 		}
+	}
+	//------------------------------
+	for (auto& p : indexMap)
+	{
+		std::cout << p.first << " : "; // 단어 출력
+		show(p.second); // p.second 는 std::list<int> 입니다.
 	}
 }
 
