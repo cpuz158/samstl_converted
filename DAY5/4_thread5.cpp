@@ -13,6 +13,13 @@ int foo()
 
 	return 100;
 }
+/*
+void 내부스레드함수(promise<int>& p)
+{
+	int ret  = foo();
+	p.set_value(ret);
+}
+*/
 
 int main()
 {
