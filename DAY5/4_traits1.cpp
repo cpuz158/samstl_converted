@@ -1,9 +1,9 @@
-// 4_traits
+ï»¿// 4_traits
 #include <iostream>
 
 template<typename T> void printv(const T& v)
 {
-	if ( T °¡ Æ÷ÀÎÅÍ Å¸ÀÔ ÀÌ¸é )
+	if ( T ê°€ í¬ì¸í„° íƒ€ì… ì´ë©´ )
 		std::cout << v << " : " << *v << std::endl;
 	else 
 		std::cout << v << std::endl;
