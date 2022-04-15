@@ -9,12 +9,19 @@
 
 template<typename T> struct is_pointer
 {
-	enum { value = false };
+//	bool value = false; // 1. C++11 이전에는 이렇게 초기화 안되었고
+						// 2. 이 경우는 컴파일 시간 상수가 아닌 변수 입니다.
+
+//	enum { value = false }; // C++11 이전 스타일
+
+	static constexpr bool value = false; // 요즘 스타일
 };
 
 template<typename T> struct is_pointer<T*>
 {
-	enum { value = true };
+//	enum { value = true };
+
+	static constexpr bool value = true;
 };
 
 
